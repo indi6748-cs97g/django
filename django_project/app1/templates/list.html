@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>計算清單</title>
+    </head>
+    <body>
+         <table border="1">
+            <thead>
+                <tr>
+                    <th>valueA</th>
+                    <th>valueB</th>
+                    <th>Result</th>
+                </tr>
+
+            </thead>
+            {% for i in data %}
+            <tr>
+                <td>{{ i.a }}</td>
+                <td>{{ i.b }}</td>
+                <td>{{ i.result }}</td>
+            </tr>
+            {% endfor %}
+
+            <form action="del" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="刪除資料庫">
+            </form>
+         </table>
+    </body>
+</html>

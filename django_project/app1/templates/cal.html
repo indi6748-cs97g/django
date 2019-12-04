@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>計算機</title>
+    </head>
+    <body>
+        <form method="POST" action="/cal/">
+            {% csrf_token %}
+                <input type="number" name="valueA">
+                <input type="number" name="valueB">
+                <input type="submit" value="提交計算">        
+        </form>
+    </body>
+</html>
