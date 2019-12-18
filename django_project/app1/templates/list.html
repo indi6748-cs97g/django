@@ -8,6 +8,7 @@
          <table border="1">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>valueA</th>
                     <th>valueB</th>
                     <th>Result</th>
@@ -15,11 +16,15 @@
 
             </thead>
             {% for i in data %}
-            <tr>
-                <td>{{ i.a }}</td>
-                <td>{{ i.b }}</td>
-                <td>{{ i.result }}</td>
-            </tr>
+                {% if i.id|divisibleby:2 %}
+                {% else %}
+                    <tr>
+                        <td>{{ i.id }}</td>
+                        <td>{{ i.a }}</td>
+                        <td>{{ i.b }}</td>
+                        <td>{{ i.result }}</td>
+                    </tr>
+                {% endif %}    
             {% endfor %}
 
             <form action="del" method="POST">
